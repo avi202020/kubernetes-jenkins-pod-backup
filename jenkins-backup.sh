@@ -26,3 +26,4 @@ for line in "${backup[@]}"
 do
   kubectl exec -i -n $POD_NS $POD_NAME -- /bin/sh -c "cd ${JENKINS_HOME} && tar cf - ${line}" | tar xf - -C .
 done
+
