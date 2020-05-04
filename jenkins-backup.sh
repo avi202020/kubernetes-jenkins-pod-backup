@@ -8,7 +8,7 @@ export JENKINS_HOME=$(kubectl exec -i -t $POD_NAME -- printenv | grep "JENKINS_H
 export datetime=$(date +%Y%m%d_%H:%M:%S)
 
 backup_dir=jenkins_backup_$datetime
-mkdir -p $backup_dir && cd $_
+mkdir -p ${backup_dir} && cd $_
 
 ORIGIFS=$IFS; IFS=$(echo -en "\n\b")
 backup=(
@@ -28,8 +28,9 @@ do
 done
 
 #Optional : You can add to push directly to you github :
+#cd ..
+#gzip -9 -r ${backup_dir}
 #git add .
 #git commit -am "Daily Jenkins Backup Sync"
-#gzip -9 $backup_dir
 #git push "https://${git_user}:${git_pass}@github.com/${git_user}/repo.git"
 
