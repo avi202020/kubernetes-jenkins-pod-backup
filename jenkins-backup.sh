@@ -30,5 +30,6 @@ done
 #Optional : You can add to push directly to you github :
 #git add .
 #git commit -am "Daily Jenkins Backup Sync"
+#gzip -9 $backup_dir
 #git push "https://${git_user}:${git_pass}@github.com/${git_user}/repo.git"
 

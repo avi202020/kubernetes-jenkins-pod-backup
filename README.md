@@ -25,4 +25,4 @@ To make restart :
 
 Last but not least : you can add a daily push to your github private/public repo.
 
-To do so just uncomment the last three lines and fill up your github credentials
+To do so just uncomment the last lines and fill up your github credentials
