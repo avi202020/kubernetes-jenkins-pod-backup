@@ -23,3 +23,6 @@ To make restart :
   b) if you have "minikube or persistentVolume" for example which does have persistentVolumeClaim then copy the files there, for minikube try it with ssh in directory /tmp/hostpath-provisioner file.
   c) you can restart the deployment by making "kubectl rollout restart deployment jenkins"
 
+Last but not least : you can add a daily push to your github private/public repo.
+
+To do so just uncomment the last three lines and fill up your github credentials

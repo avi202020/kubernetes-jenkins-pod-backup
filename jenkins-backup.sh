@@ -27,3 +27,8 @@ do
   kubectl exec -i -n $POD_NS $POD_NAME -- /bin/sh -c "cd ${JENKINS_HOME} && tar cf - ${line}" | tar xf - -C .
 done
 
+#Optional : You can add to push directly to you github :
+#git add .
+#git commit -am "Daily Jenkins Backup Sync"
+#git push "https://${git_user}:${git_pass}@github.com/${git_user}/repo.git"
+
