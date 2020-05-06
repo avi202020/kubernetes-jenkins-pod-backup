@@ -32,5 +32,7 @@ done
 #gzip -9 -r ${backup_dir}
 #git add .
 #git commit -am "Daily Jenkins Backup Sync"
+#git_user=$(cat ~/.gitconfig | grep name | cut -d= -f2 | sed 's/ //g')
+#git_pass=$(cat ~/.gitconfig | grep password | cut -d= -f2 | sed 's/ //g')
 #git push "https://${git_user}:${git_pass}@github.com/${git_user}/repo.git"
 
