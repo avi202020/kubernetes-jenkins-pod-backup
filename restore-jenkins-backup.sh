@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-"""
-  The script will require an input variable where it is the backup directory created from the backup script
-  e.g = ./restore-jenkins-backup.sh jenkins_backup_dir_datetime
-"""
+#  The script will require an input variable where it is the backup directory created from the backup script
+#  e.g = ./restore-jenkins-backup.sh jenkins_backup_dir_datetime
 
 # Grabbing the new jenkins pod , I also assumed the same assumption in the first script :)
 export POD_NAME=$(kubectl get pods --all-namespaces -o jsonpath="{.items[0].metadata.name}" | grep -i jenkins)
