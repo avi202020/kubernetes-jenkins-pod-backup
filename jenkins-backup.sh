@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 set -e
 
-export POD_NAME=$(kubectl get pods --all-namespaces -o jsonpath="{.items[0].metadata.name}" | grep -i jenkins)
+export POD_NAME=$(kubectl get pods --all-namespaces -o jsonpath="{.items[*].metadata.name}" | sed -E 's/\s/\n/g' | grep -i jenkins)
 export POD_NS=$(kubectl get pods $POD_NAME -o jsonpath="{.metadata.namespace}")
 export JENKINS_HOME=$(kubectl exec -i -t $POD_NAME -- printenv | grep "JENKINS_HOME" | cut -d= -f2 | tr -d '\r')
 export datetime=$(date +%Y%m%d_%H:%M:%S)
 
-backup_dir=jenkins_backup_$datetime
+backup_dir=Daily-Backup-Jenkins-sam-xps
+rm -rf Daily-Backup-Jenkins-sam-xps
 mkdir -p ${backup_dir} && cd $_
 
 ORIGIFS=$IFS; IFS=$(echo -en "\n\b")
@@ -27,12 +28,13 @@ do
   kubectl exec -i -n $POD_NS $POD_NAME -- /bin/sh -c "cd ${JENKINS_HOME} && tar cf - ${line}" | tar xf - -C .
 done
 
-#Optional : You can add to push directly to you github :
-#cd ..
-#gzip -9 -r ${backup_dir}
-#git add .
-#git commit -am "Daily Jenkins Backup Sync"
-#git_user=$(cat ~/.gitconfig | grep name | cut -d= -f2 | sed 's/ //g')
-#git_pass=$(cat ~/.gitconfig | grep password | cut -d= -f2 | sed 's/ //g')
-#git push "https://${git_user}:${git_pass}@github.com/${git_user}/repo.git"
+cd ..
 
+#optional compress the backup directory
+#gzip -9 -r ${backup_dir}
+
+git_user=$(grep name ~/.gitconfig | cut -d= -f2 | sed 's/ //g')
+git_pass=$(grep password ~/.gitconfig | cut -d= -f2 | sed 's/ //g')
+git add ${backup_dir}
+git commit -am "Daily Jenkins Backup Sync"
+git push "https://${git_user}:${git_pass}@github.com/${git_user}/jenkins-backup-sam-xps.git"
