@@ -33,8 +33,10 @@ cd ..
 #optional compress the backup directory
 #gzip -9 -r ${backup_dir}
 
+
+# example for saving the backup in your private github repo
 git_user=$(grep name ~/.gitconfig | cut -d= -f2 | sed 's/ //g')
 git_pass=$(grep password ~/.gitconfig | cut -d= -f2 | sed 's/ //g')
 git add ${backup_dir}
 git commit -am "Daily Jenkins Backup Sync"
-git push "https://${git_user}:${git_pass}@github.com/${git_user}/jenkins-backup-sam-xps.git"
+git push "https://${git_user}:${git_pass}@github.com/${git_user}/jenkins-backup.git"
