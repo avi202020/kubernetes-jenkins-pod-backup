@@ -1,0 +1,38 @@
+Started by user [8mha:////4I97ZmECuJ+RavpYdZNZxMNM/8VH5kFdT7/HHYqH/GqUAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running in Durability level: MAX_SURVIVABILITY
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+WorkflowScript: 8: Expected to find ‘someKey "someValue"’ @ line 8, column 28.
+           	containerTemplate {
+                              ^
+
+WorkflowScript: 17: Unknown stage section "git". Starting with version 0.5, steps in a stage must be in a ‘steps’ block. @ line 17, column 9.
+           stage('clone git maven') {
+           ^
+
+WorkflowScript: 17: Unknown stage section "stage". Starting with version 0.5, steps in a stage must be in a ‘steps’ block. @ line 17, column 9.
+           stage('clone git maven') {
+           ^
+
+WorkflowScript: 17: Expected one of "steps", "stages", or "parallel" for stage "clone git maven" @ line 17, column 9.
+           stage('clone git maven') {
+           ^
+
+4 errors
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:310)
+	at org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(CompilationUnit.java:1085)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:603)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:581)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:558)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
+	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:688)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:700)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:142)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:127)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:561)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:522)
+	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:337)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:428)
+Finished: FAILURE

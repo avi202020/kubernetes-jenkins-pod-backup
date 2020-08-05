@@ -1,0 +1,10 @@
+commit 3ad1d7d5668315aff60c44ace4e297993417e9eb
+tree d3e6c699d8fff57c5120b35de847caf15737c5c0
+parent a0d351133652d766cb64f83c7de16ff277aeb9a2
+author samer-habash <sam.habash1984@gmail.com> 2020-05-06 22:48:31 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-05-06 22:48:31 +0300
+
+    none
+
+
+:100644 100644 075fb635af49bad539bde59802f20e02f328da80 3e2cb10b5ce4eb3a510fe7e7f77ae9e8440eb3ad M	rabbitmq-chart/Chart.yaml

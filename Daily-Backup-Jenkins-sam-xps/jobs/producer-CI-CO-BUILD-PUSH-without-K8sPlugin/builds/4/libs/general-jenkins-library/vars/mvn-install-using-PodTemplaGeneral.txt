@@ -1,0 +1,28 @@
+We would like to create maven image, clone sample maven project then install it .
+
+Here is the steps for it in the Jenkins pipeline using (gitCo and PodTemplateGeneral):
+
+// Apply in local Jenkins pipeline Job
+@Library('general-jenkins-library@master') _
+
+PodTemplateGeneral(
+    cloud: 'kubernetes-cluster1',
+    label: 'pod-label-cluster1',
+    name: 'maven-image',
+    image: 'maven:3.3.9-jdk-8-alpine')
+    {
+        node('pod-label-cluster1') {
+		    stage('Check Maven Release') {
+		        container('maven-image') {
+		            gitCo(
+						branch: "master",
+                        url: "https://github.com/web3j/sample-project-maven"
+                        )}
+		    }
+		    stage('Install mvn') {
+		        container('maven-image') {
+		            sh 'mvn clean install'
+		        }
+		    }
+		}
+	}

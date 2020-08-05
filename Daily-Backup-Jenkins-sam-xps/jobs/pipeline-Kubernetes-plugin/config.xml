@@ -1,0 +1,57 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.39">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.6.0"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.6.0">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.80">
+    <script>pipeline {
+    agent {
+        kubernetes {
+            cloud &apos;kubernetes-cluster1&apos;
+            label &apos;pod-label-cluster1&apos;
+            defaultContainer &apos;jenkins-slave&apos;
+            containerTemplate {
+                name &apos;centos-image&apos;
+                image &apos;centos:centos7&apos;
+                command &apos;cat&apos;
+                ttyEnabled true
+            }
+            containerTemplate {
+                name &apos;ubuntu-image&apos;
+                image &apos;ubuntu:bionic&apos;
+                command &apos;cat&apos;
+                ttyEnabled true
+            }
+        }
+    }
+    stages {
+  		stage(&apos;Build Centos&apos;) {
+		    steps {
+			    container(&apos;ubuntu-image&apos;) {
+				    sh &apos;cat /etc/*-release&apos;
+			    }
+		    }
+  		}
+      	stage(&apos;Build Ubuntu&apos;) {
+    		steps {
+    		    container(&apos;ubuntu-image&apos;) {
+    				sh &apos;cat /etc/*-release&apos;
+    		    }
+    		}
+      	}
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

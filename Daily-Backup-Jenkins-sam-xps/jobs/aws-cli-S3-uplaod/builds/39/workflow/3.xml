@@ -1,0 +1,103 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.4">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@2.80">
+    <parentIds>
+      <string>2</string>
+    </parentIds>
+    <id>3</id>
+    <descriptorId>org.csanchez.jenkins.plugins.kubernetes.pipeline.PodTemplateStep</descriptorId>
+  </node>
+  <actions>
+    <s.a.LogStorageAction/>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.80">
+      <arguments>
+        <entry>
+          <string>cloud</string>
+          <string>kubernetes-cluster1</string>
+        </entry>
+        <entry>
+          <string>containers</string>
+          <list>
+            <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable plugin="structs@1.20">
+              <symbol>containerTemplate</symbol>
+              <arguments class="linked-hash-map">
+                <entry>
+                  <string>name</string>
+                  <string>aws-cli-secret</string>
+                </entry>
+                <entry>
+                  <string>image</string>
+                  <string>samer1984/aws-cli-alpine:v1</string>
+                </entry>
+                <entry>
+                  <string>ttyEnabled</string>
+                  <boolean>true</boolean>
+                </entry>
+                <entry>
+                  <string>envVars</string>
+                  <list>
+                    <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                      <symbol>envVar</symbol>
+                      <arguments class="linked-hash-map">
+                        <entry>
+                          <string>key</string>
+                          <string>AWS_DEFAULT_REGION</string>
+                        </entry>
+                        <entry>
+                          <string>value</string>
+                          <string>us-east-1</string>
+                        </entry>
+                      </arguments>
+                    </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                    <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                      <symbol>secretEnvVar</symbol>
+                      <arguments class="linked-hash-map">
+                        <entry>
+                          <string>key</string>
+                          <string>AWS_ACCESS_KEY_ID</string>
+                        </entry>
+                        <entry>
+                          <string>secretName</string>
+                          <string>aws-configure</string>
+                        </entry>
+                        <entry>
+                          <string>secretKey</string>
+                          <string>AWS_ACCESS_KEY_ID</string>
+                        </entry>
+                      </arguments>
+                    </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                    <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                      <symbol>secretEnvVar</symbol>
+                      <arguments class="linked-hash-map">
+                        <entry>
+                          <string>key</string>
+                          <string>AWS_SECRET_ACCESS_KEY</string>
+                        </entry>
+                        <entry>
+                          <string>secretName</string>
+                          <string>aws-configure</string>
+                        </entry>
+                        <entry>
+                          <string>secretKey</string>
+                          <string>AWS_SECRET_ACCESS_KEY</string>
+                        </entry>
+                      </arguments>
+                    </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                  </list>
+                </entry>
+              </arguments>
+            </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+          </list>
+        </entry>
+        <entry>
+          <string>label</string>
+          <string>pod-label-cluster1</string>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.40">
+      <startTime>1588192673627</startTime>
+    </wf.a.TimingAction>
+  </actions>
+</Tag>

@@ -1,0 +1,20 @@
+commit 6705cb8d394086a1889fa671701b555e79d3e7b4
+tree 2367cacd663781095e7038389c0a4c3f99abf567
+parent 46981a8fb36848d77375fd9b6f6ab861601677e4
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 15:48:54 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 15:48:54 +0300
+
+    modified Temaplate General
+
+
+:100644 100644 e6fa759c9fcd675a955d6ab518e52ab98ac22c29 853dc3711a3fd42227b48f69abcb217e493a4643 M	vars/PodTemplateGeneral.groovy
+commit 46981a8fb36848d77375fd9b6f6ab861601677e4
+tree fc3e12f2b7bb6ccd5e6e8c933316b28b7304a5f2
+parent b9b6139d14a017c0539700233f6dc638388aa05f
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 15:47:24 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 15:47:24 +0300
+
+    PodTemplate General modification
+
+
+:100644 100644 337dcb63983f602cdbf8c272d6420f6f38bb294d e6fa759c9fcd675a955d6ab518e52ab98ac22c29 M	vars/PodTemplateGeneral.groovy

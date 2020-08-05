@@ -1,0 +1,50 @@
+commit c9ff1b4b64318c4939df9bdd5e19169d4ffd4ff8
+tree 5e03753d11fb4d7072e4c62c2e7ba337072e344b
+parent cda7b79b856b34315a2a747e0537a680c262db11
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 13:03:43 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 13:03:43 +0300
+
+    Adding Maven installation with Jenkins Librabry
+
+
+:100644 100644 e232bfa1d16f5d38c5cdd73850b3459fdab6dada 635d8c6e32922cbddcecbf47c18aac2d9633c172 M	vars/PodTemplateGeneral.groovy
+:100644 100644 d350c615925ee4700fba376b8931bd44826c50ff cd33967159154d8198b3eb58623ce3ad5d0922d8 M	vars/gitCo.groovy
+commit cda7b79b856b34315a2a747e0537a680c262db11
+tree 4a4496d2dd6ff12dae676602758a715508348b4c
+parent 41838bac90cf3c7af9bce0747869c691a3993302
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 12:35:23 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 12:35:23 +0300
+
+    Adding Templates General In Jenkins Library
+
+
+:100644 100644 83143aa94085c018b29fd826e137c6ecb4e0ae96 2834ecb27e724191a7a56b3cb4ad3c9d7ae0e1a1 M	vars/PodTemplateCentos.groovy
+:100644 100644 e72422c7ae89d8f115f88c5f1b89d03f64519032 e232bfa1d16f5d38c5cdd73850b3459fdab6dada M	vars/PodTemplateGeneral.groovy
+:100644 100644 05dd5b3b0b70f7b5b67fd6df8f14dc324a39b556 119e4ed9aa4580921737d34ec742abac3c857ac1 M	vars/PodTemplateMaven.groovy
+:100644 100644 d975a2aca1ad3428dda6681884f991387a4212ab c4309240e64223564c2def52c77abfadaa47d28d M	vars/PodTemplateUbuntu.groovy
+:100644 100644 9522ddd93c1cd7c180d085ab3a25a8dc7af8f2de d350c615925ee4700fba376b8931bd44826c50ff M	vars/gitCo.groovy
+:100644 000000 d20de79a64441257f539ea659be12fca6ff91ae4 0000000000000000000000000000000000000000 D	vars/nohup.out
+commit 41838bac90cf3c7af9bce0747869c691a3993302
+tree 260420e36495c547dcf7e9f346370c73798fb450
+parent f39c57676778a040baa83357a6596e2b65d433df
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 12:02:47 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 12:02:47 +0300
+
+    PodTemaplte General
+
+
+:000000 100644 0000000000000000000000000000000000000000 e474db10469c6cbea805b27694ec162afcadda96 A	Basic-concept
+commit f39c57676778a040baa83357a6596e2b65d433df
+tree 13f9e55cd37fdae4de6fc0626e42e0b5f078e930
+parent 766257b7ee49a5e668e5c9b77ac92e576869629d
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 12:02:30 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 12:02:30 +0300
+
+    PodTemaplte General
+
+
+:100644 100644 dbf494dd15845f98b5950cba2b1add04a8093db1 83143aa94085c018b29fd826e137c6ecb4e0ae96 M	vars/PodTemplateCentos.groovy
+:000000 100644 0000000000000000000000000000000000000000 e72422c7ae89d8f115f88c5f1b89d03f64519032 A	vars/PodTemplateGeneral.groovy
+:100644 100644 a731a3a89d9b88cf43e2d5a0cf616917d3d5d175 05dd5b3b0b70f7b5b67fd6df8f14dc324a39b556 M	vars/PodTemplateMaven.groovy
+:100644 100644 c36f7ec4968d7d9f0b581641df9ea450a1a6bdb3 d975a2aca1ad3428dda6681884f991387a4212ab M	vars/PodTemplateUbuntu.groovy
+:100644 100644 18d2c25540e43840c551de6e803d959bd863f444 9522ddd93c1cd7c180d085ab3a25a8dc7af8f2de M	vars/gitCo.groovy

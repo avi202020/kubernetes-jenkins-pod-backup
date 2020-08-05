@@ -1,0 +1,130 @@
+Started by user [8mha:////4I97ZmECuJ+RavpYdZNZxMNM/8VH5kFdT7/HHYqH/GqUAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running in Durability level: MAX_SURVIVABILITY
+Loading library general-jenkins-library@master
+Attempting to resolve master from remote references...
+ > git --version # timeout=10
+ > git ls-remote -h -- https://github.com/samer-habash/Jenkins-shared-Library.git # timeout=10
+Found match: refs/heads/master revision bab2bec320e7ce6f7140d54c82c4cd726bdbda0d
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/samer-habash/Jenkins-shared-Library.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/samer-habash/Jenkins-shared-Library.git
+ > git --version # timeout=10
+ > git fetch --no-tags --progress -- https://github.com/samer-habash/Jenkins-shared-Library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision bab2bec320e7ce6f7140d54c82c4cd726bdbda0d (master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f bab2bec320e7ce6f7140d54c82c4cd726bdbda0d # timeout=10
+Commit message: "asd"
+ > git rev-list --no-walk 9b301fb0d71fd4138ff2aaa0f1c3b24f831339e8 # timeout=10
+[8mha:////4D7FoMqYcAvdRNXiSaoYGoo6jiIWf0/E+0cbq4gtuDIqAAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4DDEY1/pRi8az/ZUusS8KpnHpQk0BPNTJSTEQqgCQ9x9AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] podTemplate
+[8mha:////4NjlCCBUpCS4G1nxL8/nTrWfuG70m/d6EVpsiiObHZXaAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4Km8Dk231Vb3UJtzAKNZhkxqDdA+CI/Tahxf9mwHRJPzAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] node
+Still waiting to schedule task
+Waiting for next available executor on ‘general-pod-label-cluster2-x8fwt’
+Agent [8mha:////4Okl6yj001jp/eL9Y+tR+lWWtJVuHeXlaR4k+W90ybEHAAAAtR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyFEgYt/eT83ILSktQi/fTUvNSixBzdgvwU3ZzEpNQc3eSc0mKgjJFuhUVaeQkAmwv1g98AAAA=[0mgeneral-pod-label-cluster2-x8fwt is provisioned from template general-pod-label-cluster2
+---
+apiVersion: "v1"
+kind: "Pod"
+metadata:
+  labels:
+    general-pod-label-cluster2: "true"
+    jenkins-slave-cluster2: "true"
+    jenkins/label: "general-pod-label-cluster2"
+  name: "general-pod-label-cluster2-x8fwt"
+spec:
+  containers:
+  - args:
+    - "cat"
+    command:
+    - "/bin/sh"
+    - "-c"
+    image: "maven:3.3.9-jdk-8-alpine"
+    imagePullPolicy: "IfNotPresent"
+    name: "maven-image"
+    resources:
+      limits: {}
+      requests: {}
+    securityContext:
+      privileged: false
+    tty: true
+    volumeMounts:
+    - mountPath: "/home/jenkins/agent"
+      name: "workspace-volume"
+      readOnly: false
+    workingDir: "/home/jenkins/agent"
+  - env:
+    - name: "JENKINS_SECRET"
+      value: "********"
+    - name: "JENKINS_TUNNEL"
+      value: "172.18.0.4:50000"
+    - name: "JENKINS_AGENT_NAME"
+      value: "general-pod-label-cluster2-x8fwt"
+    - name: "JENKINS_NAME"
+      value: "general-pod-label-cluster2-x8fwt"
+    - name: "JENKINS_AGENT_WORKDIR"
+      value: "/home/jenkins/agent"
+    - name: "JENKINS_URL"
+      value: "http://172.18.0.4:8080/"
+    image: "jenkins/jnlp-slave:4.0.1-1"
+    name: "jnlp"
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "256Mi"
+    volumeMounts:
+    - mountPath: "/home/jenkins/agent"
+      name: "workspace-volume"
+      readOnly: false
+  hostNetwork: false
+  nodeSelector:
+    beta.kubernetes.io/os: "linux"
+  restartPolicy: "Never"
+  securityContext: {}
+  volumes:
+  - emptyDir:
+      medium: ""
+    name: "workspace-volume"
+
+Running on [8mha:////4JTgSUG4vnY9W79raolvEG80zGYgWDPuQpZCkeLKw8foAAAAth+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyFEgZt/eT83ILSktQi/fTUvNSixBzdgvwU3ZzEpNQc3eSc0mKgjJFuhUVaeYk+AHFVpTTgAAAA[0mgeneral-pod-label-cluster2-x8fwt in /home/jenkins/agent/workspace/Build-Maven-Shared-lib
+[8mha:////4M4QsNApeES5xZqhl9U5G8urq0Jk1jKVEKPI9LB4DGffAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] {
+[8mha:////4D9ihZnQ8c+l9Q3cX2WPdUSh3ih41v8/z0Df7WIgnU2aAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gwExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jcChmMxwAAAAA==[0m[Pipeline] stage
+[8mha:////4PKojCYFYiWRxOp6ngUkwrdsXzd8JUcWq3y4KOOtY/8cAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BAkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfpX/cvwAAAAA==[0m[Pipeline] { (Check Maven Release)
+[8mha:////4EQlgAK9vADv2DvYe/eXg3kF8cbS5uEyjPqkoyReghqcAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0BSEm1igLJwhJCGmj/9skpZ04EVfjDgQqMWHJkm3Jes8X1CnCkaLjrcXOY9Ke92F0JfGJYncNNPGWLlwTJgqWSztJMva0VEnZwiJWwUrA2qIOlDy6DBvRqrtqgkLXnHMs20FA5c0AD2CikLOK+VvmCNvbaBLhj/MXAHOfge2K959f/QbB16AVwAAAAA==[0m[Pipeline] container
+[8mha:////4CL4bD0Eub3Wd/OeQWstYzZakSLRFuzXE6FrxlXbjfbWAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDJUJUtJYbXmBiY5xYd8G+kFS8iK/xBwKRqNhqZ6XVPF9Q5gQHSl42DtuAuQ6yi72fmhwotZdIg2zoLGvCTNFJ7QZN1h1n1MQO5ogCFgqWDutIOaBnWKnG3E0VDfrqxGna9gqKYG/wAKEmM5vEXxgTrK+9zYQ/z18BjB2D2DEU283nWL4Bsam+msEAAAA=[0m[Pipeline] {
+[8mha:////4AZ8e1rgeC36svKQfPtkPRZ3JpyOpd1e3UbDImPxlmgJAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCakRFa6XhBSYxxo5159gOTsWL+Bp/IBCJii1WO9vM8wXrGODIQaNV1BuKrUHvRj0vzBz6q+OMli/YMkV2ChuVG+7UacGGk4IlRQkrARtFreNoSCfYCivvsnKSdHVOYf4OAkrTDfCAQszmJEP6whRgdxu7yPTz/BXA5BOU9f5TtX8D0loxuL4AAAA=[0m[Pipeline] checkout
+No credentials specified
+Warning: JENKINS-30600: special launcher org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecorator$1@32ff7f59; decorates RemoteLauncher[hudson.remoting.Channel@7630a428:JNLP4-connect connection from 172.18.0.1/172.18.0.1:56544] will be ignored (a typical symptom is the Git executable not being run inside a designated container)
+Cloning the remote Git repository
+Cloning repository https://github.com/web3j/sample-project-maven
+ > git init /home/jenkins/agent/workspace/Build-Maven-Shared-lib # timeout=10
+Fetching upstream changes from https://github.com/web3j/sample-project-maven
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/web3j/sample-project-maven +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/web3j/sample-project-maven # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/web3j/sample-project-maven # timeout=10
+Fetching upstream changes from https://github.com/web3j/sample-project-maven
+ > git fetch --tags --progress -- https://github.com/web3j/sample-project-maven +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision 15c603992f56585f915e60d7cf2c6e6d613fc122 (origin/master)
+ > git rev-parse origin/master^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 15c603992f56585f915e60d7cf2c6e6d613fc122 # timeout=10
+Commit message: "Merge pull request #1 from JohnChangUK/master"
+ > git rev-list --no-walk 15c603992f56585f915e60d7cf2c6e6d613fc122 # timeout=10
+[8mha:////4E4I0ey2MS1OYkiqyWr8LeSMF8SnSXJWmIyfsCvBywqUAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICtIgqreWGF5jYGCfWnbEdkooX8TX+QCASFVusdraZ5wuWKcKRo8XWUOcoNQ6D7+20cODYXTwP2PIZG6bE3qA0g2Rt6hklZwNzihIWAlaGGs/Jkc2wFq26q8orstUpx+k7CCidvsEDCjGZs4r5C2OEzbXXienn+SuAMYQM5W7/qe0bsgYiW74AAAA=[0m[Pipeline] }
+[8mha:////4MduVnR5D2uqdpW0QHFSVBQx2FNDxB4FOiOuamGGVI+QAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRokKIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsTZPsP6C1U670AAAA=[0m[Pipeline] // container
+[8mha:////4CRS6g+WrWKgPkHuEI2+guqdEU7r+QaHP334fBntMqAZAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIREgUSoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHaCbC/It7vuAyX3kfC9AAAA[0m[Pipeline] sh
++ mvn clean install
+/home/jenkins/agent/workspace/Build-Maven-Shared-lib@tmp/durable-33c8a408/script.sh: 1: /home/jenkins/agent/workspace/Build-Maven-Shared-lib@tmp/durable-33c8a408/script.sh: mvn: not found
+[8mha:////4E5/EdcqzGsSY6Gsrm28h89G6NIi2O9ZsfiEqsPe12fsAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRBRISoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/uBNn+A97oExO9AAAA[0m[Pipeline] }
+[8mha:////4D4dvPQvzmjaXdPErl/VOE1AbnIUuvS3Cd92mgCsLJqeAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRDRSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsTZPsPn48MxL0AAAA=[0m[Pipeline] // stage
+[8mha:////4C8nskk+ytK8dat5VmXkeUYPxOQW35/3g2vI2haX/m5jAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRDRSIitZKwwtMYowT6y7YF5KKF/E1/kBEJCq22plmXm8sU8SRo1ONpdZTqrzqQu+mpwaO7TXwoBq+qIopcbCqtEPJtT3NWLJYzMtyLDRWlqrAyZMTrHVjHqYIhlxxlji5g0bu6zueyPRUFhPlC2PE5tbXienX+RvA2HWCfLsXZLsPuZZrjr0AAAA=[0m[Pipeline] }
+[8mha:////4Cunp/+WXNafR5vCUGnTyCn1+bN9UVEMSjWj/6Ne43DiAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRBRISoqK10vACkxjjxLoL9oWk4kV8jT8QEYmKrXammdcbyxRx5OhUY6n1lCqvutC76amBY3sNPKiGL6piShysKu1Qcm1PM5YsFvOyHAuNlaUqcPLkBGvdmIcpgiFXnCVO7qCR+/qOJzI9lcVE+cIYsbn1dWL6df4GMHadIN/uBdnuA9JQMpW9AAAA[0m[Pipeline] // node
+[8mha:////4CTCKw7hqHWRKa6sEOmW5/TsmYTlsMi1kRd/uwm3s9dFAAAApB+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIREg1CVLRWGl5gEmOcWHfBvpBUvIiv8QciIlGx1c4083pjmSKOHJ1qLLWeUuVVF3o3PTVwbK+BB9XwRVVMiYNVpR1Kru1pxpLFYl6WY6GxslQFTp6cYK0b8zBFMOSKs8TJHTRyX9/xRKanspgoXxgjNre+Tky/zt8Axq4T5Nu9INt9APRJVd+9AAAA[0m[Pipeline] }
+[8mha:////4C0YeDtmFOfJ28uJMnoooVE73hab7D0up2b9hxyjsIQ1AAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJBUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny3VaQ7T+IzLXKvQAAAA==[0m[Pipeline] // podTemplate
+[8mha:////4IVAQQo2R0AjZh5+38KIpxlanhUzCvaFUJDeECzpHmPAAAAAoh+LCAAAAAAAAP9tjTESgjAQRT84FraWHiKMtI6VbYbGE0SIMZDZxWQRKk/k1byDjMxY+av/XvNeb6xTxJGjU62lzlOqverD4OanRo7dNfCoWr6omilxsKqyY8WNPS1YsVgsy3KsNDaW6sDJkxNsdWsepgiGXHGWOLuDRu6bO57I9FwWE+ULU8TuNjSJ6df5G8DU94K83Auy8gOu1dKAvQAAAA==[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 127
+Finished: FAILURE

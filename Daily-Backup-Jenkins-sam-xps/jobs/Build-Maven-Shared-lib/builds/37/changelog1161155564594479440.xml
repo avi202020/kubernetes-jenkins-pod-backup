@@ -1,0 +1,10 @@
+commit 94401b77b6872ee3dc69a9e8191a500c072c6b56
+tree 1099b89cb81a944cdfbb41431f55394a6a0e647c
+parent 6eb62990b432df32b422a26e3f1d4378c047f64b
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 16:22:20 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 16:22:20 +0300
+
+    O
+
+
+:100644 100644 4c4469ad0cb052549cef25d69ff4278380e03b85 ee80e28f569322dbabe125623d83b26181980b65 M	vars/PodTemplateGeneral.groovy

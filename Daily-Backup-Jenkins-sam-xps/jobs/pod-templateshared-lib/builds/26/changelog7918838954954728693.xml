@@ -1,0 +1,17 @@
+commit d5b9ff32eb94b010b7562d45a5d85b7406a40617
+tree 5857d57dfb27838535bf9d455d4c8302ce29cba9
+parent 1d15a883c43c1f9e468d9d030b6a26a732a36da6
+author samer-habash <sam.habash1984@gmail.com> 2020-05-04 10:29:55 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-05-04 10:29:55 +0300
+
+    modifying name of pod label and kubernetes cloud name
+
+
+:100644 100644 d0876a78d06ac03b5d78c8dcdb95570281c6f1d6 94b5813bef0547ff41e5ba8699d9579e545002a5 M	.idea/Jenkins-Shared-Library.iml
+:100644 100644 5be4ffb3ac358e75894a0f3b250d8433c2bb2477 e59917210a1369617665ae0ed257a00c4a4cf475 M	.idea/modules.xml
+:100644 100644 8e44ac0efb667d62f8732a05bcd9f6e99176ab0f 09395f766b958d6e68088900c4386c972ecba9e8 M	.idea/workspace.xml
+:100644 100644 2834ecb27e724191a7a56b3cb4ad3c9d7ae0e1a1 65d62ec99abc5c07365e0da2c529878df080e520 M	vars/PodTemplateCentos.groovy
+:100644 100644 2cff95d8d9d2c8a67e8595d9f92e7a73fe87662c 4a451e7899c2b66e87cf57d67db7767cae30f47c M	vars/PodTemplateGeneral.groovy
+:100644 100644 978435e89b3da430122bb2ae4271b22f77fc6a7c 3f69d7a8c13362bd7c4e64d44eacd0b282065340 M	vars/PodTemplateMaven.groovy
+:100644 100644 c4309240e64223564c2def52c77abfadaa47d28d 085ec2f4aec3a1fc5f43283c32357a81ff92f5e7 M	vars/PodTemplateUbuntu.groovy
+:100644 100644 f1122ac3bdf0c93f6c95a4e1220127c9d68721f5 4d8ad13e0bf2aa9154fcbcc4cff3cc92dbfc69ab M	vars/mvn-install-using-PodTemplaGeneral.txt

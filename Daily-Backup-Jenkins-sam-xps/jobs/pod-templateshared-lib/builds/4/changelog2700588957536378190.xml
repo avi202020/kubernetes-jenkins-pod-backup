@@ -1,0 +1,12 @@
+commit b908d5bb656cd3e0d8d95162b04def55dfb34d10
+tree b98417de7aa677374e59ffdf2d9348bab599fb33
+parent b195b819867f82f20ecfc78e948c60f112f8cc15
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 02:15:56 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 02:15:56 +0300
+
+    Added vars at Pod Ubuntu
+
+
+:100644 100644 fc1e47350aa7b9e2a1cb9eefc726c1330f887620 0ea3929d36509691a4de3eb58b48a5e41cabf586 M	README.md
+:100644 100644 8ca41449766e8238f1bc3132ea9d5cbbe2203fd8 8ca41449766e8238f1bc3132ea9d5cbbe2203fd8 R100	vars/podTemplateMaven.groovy	vars/PodTemplateMaven.groovy
+:100644 100644 8336a09a2d08ffc0468f9c05c84833074bad1ffb a4841668020fc9501392498173ed52054ef83b0e M	vars/PodTemplateUbuntu.groovy

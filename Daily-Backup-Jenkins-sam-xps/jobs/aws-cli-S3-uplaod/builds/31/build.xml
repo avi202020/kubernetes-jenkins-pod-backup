@@ -1,0 +1,121 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.39">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.16">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <org.jenkinsci.plugins.workflow.cps.EnvActionImpl plugin="workflow-cps@2.80">
+      <env class="tree-map"/>
+    </org.jenkinsci.plugins.workflow.cps.EnvActionImpl>
+  </actions>
+  <queueId>55</queueId>
+  <timestamp>1588191008487</timestamp>
+  <startTime>1588191008495</startTime>
+  <result>FAILURE</result>
+  <duration>25792</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>podTemplate(cloud: &apos;kubernetes-cluster1&apos;, label: &apos;pod-label-cluster1&apos;,
+    containers: [
+		containerTemplate(
+		  name: &apos;aws-cli-secret&apos;,
+		  image: &apos;samer1984/aws-cli-alpine:v1&apos;,
+		  ttyEnabled: true,
+		  envVars: [
+			envVar(key: &apos;AWS_DEFAULT_REGION&apos;, value: &apos;us-east-1&apos;),
+			secretEnvVar(key: &apos;AWS_ACCESS_KEY_ID&apos;, secretName: &apos;aws-configure&apos;, secretKey: &apos;AWS_ACCESS_KEY_ID&apos;),
+			secretEnvVar(key: &apos;AWS_SECRET_ACCESS_KEY&apos;, secretName: &apos;aws-configure&apos;, secretKey: &apos;AWS_SECRET_ACCESS_KEY&apos;)]
+		)
+	]
+)
+{
+  node(&apos;pod-label-cluster1&apos;) {
+    stage(&apos;isuuing aws commands&apos;) {
+      container(&apos;aws-cli-secret&apos;) {
+        def repositoryUrl = scm.userRemoteConfigs[0].url
+        echo $repositoryUrl
+        def repoName = repositoryUrl.lastIndexOf(&apos;/&apos;).replaceAll(&quot;\\s+&quot;, &quot;&quot;).replaceAll(&quot;_&quot;, &quot;&quot;).replaceAll(/\.git$/, &apos;&apos;).toLowerCase()
+        //def GitBranch = checkout(scm).GIT_BRANCH
+        // def scmpath = GIT_BRANCH
+        // def repoOwner = scmpath.split(&apos;/&apos;)[0]
+        //def repoName = scmpath.lastIndexOf(&apos;/&apos;).replaceAll(&quot;\\s+&quot;, &quot;&quot;).replaceAll(&quot;_&quot;, &quot;&quot;).replaceAll(/\.git$/, &apos;&apos;).toLowerCase()
+        //def repoNameLower = repoName.substring(0, repoName.toLowerCase())
+        echo $repoName
+        // echo $repoOwner
+        //echo $repoNameLower
+        // S3 bucket cannot contain : spaces, underscores, uppercase letters
+        // def repoName = GitBranch.substring(0, GitBranch.lastIndexOf(&apos;/&apos;)).toLowerCase().replaceAll(&quot;\\s+&quot;, &quot;&quot;).replaceAll(&quot;_&quot;, &quot;&quot;)
+        // def repoBranch = GitBranch.tokenize(&apos;/&apos;)[1].toLowerCase().replaceAll(&quot;\\s+&quot;, &quot;&quot;).replaceAll(&quot;_&quot;, &quot;&quot;)
+        // echo $repoName $repoBranch
+        // def S3Check = sh(returnStdout: true, script: &quot;aws s3 ls&quot;)
+        // if (S3Check.contains(repoName)) {
+        //   println(&quot;S3 Bucket for $repoName exists&quot;)
+        // }
+        // else {
+        //   println(&quot;S3 Bucket $repoName does not exist&quot;)
+        // }
+        // if (check_s3) {
+        //   println &quot;S3 Bucket exists, synchronization step activated&quot;
+        //   sh &quot;&quot;&quot;
+        //       # --delete : for deleting any files that are exist in source and not in S3
+        //       aws s3 sync . s3://${repoName}-${repoBranch} --exclude &apos;.git/*&apos; --delete
+        //       echo &quot;S3 bucet synchronization of repo ${repoName} is finished&quot;
+        //   &quot;&quot;&quot;
+        // }
+        // else {
+        //   println &quot;S3 Bucket does not exist, creation step activated&quot;
+        //   sh &quot;&quot;&quot;
+        //     aws s3 mb s3://${repoName}-${repoBranch}
+        //     aws s3 cp . s3://${repoName}-${repoBranch} --recursive --exclude &apos;.git/*&apos;
+        //     echo &quot;Finished upload the repo to S3 Bucket Name : ${repoName}-${repoBranch}&quot;
+        //   &quot;&quot;&quot;
+        // }
+      }
+    }
+  }
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>75461925</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>323330352</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>287548892</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>185230616</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>13681845</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>19</iota>
+    <head>1:19</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

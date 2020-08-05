@@ -1,0 +1,10 @@
+commit 7a0efee880955b3891ea00b23a5bb5892e3c9ae6
+tree f4ab46baa42c2dbef13a0ca6fb366779936a31a6
+parent 0f7687d3455ce4aef06c24bafb0460cedcfb4516
+author samer-habash <sam.habash1984@gmail.com> 2020-04-14 10:00:43 +0300
+committer samer-habash <sam.habash1984@gmail.com> 2020-04-14 10:00:43 +0300
+
+    Ubuntu template
+
+
+:100644 100644 a1a7f6df318440667564df3c39dddc3c4616212f 7ff7a412d8eb3e5a8560c90588c447f454fe2490 M	vars/PodTemplateUbuntu.groovy

@@ -1,0 +1,60 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.39">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.6.0"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.6.0">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description>For jenkins without being installed inside kubernetes it is good to go .&#xd;
+&#xd;
+But with kubernetes we need some agents to do it .&#xd;
+&#xd;
+I will apply the node master to do it for a try out.</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.80">
+    <script>pipeline {
+	environment {
+		registry = &quot;samer1984/producer-jenkins&quot;
+		registryCredential = &apos;DockerhubCreds&apos;
+		dockerImage = &apos;&apos;
+	}
+    agent any
+    stages {
+  		stage(&apos;Clone producer repo&apos;) {
+		    steps {
+		        // This will clone all the repo , so we need to repo only the producer app by svn (or make a cd app/producer but no idea if cd will work)
+		        checkout([$class: &apos;GitSCM&apos;, branches: [[name: &apos;*/master&apos;]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: &apos;GitHub&apos;, url: &apos;https://github.com/samer-habash/kubernetes-project-rabitmq&apos;]]])
+			}
+		}
+      	stage(&apos;Build-Image&apos;) {
+    		steps {
+    		    script {
+    		        dockerImage = docker.build registry + &quot;:$BUILD_NUMBER&quot;
+    		    }
+    		}
+      	}
+		stage(&apos;Push Image&apos;) {
+			steps {
+				script {
+					docker.withRegistry( &apos;&apos;, registryCredential ) {
+						dockerImage.push()
+					}
+				}
+			}
+		}
+	}
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

@@ -2,7 +2,7 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 set -e
 
-export POD_NAME=$(kubectl get pods --all-namespaces -o jsonpath="{.items[*].metadata.name}" | sed -E 's/\s/\n/g' | grep -i jenkins)
+export POD_NAME=$(kubectl get pods --all-namespaces -o custom-columns=POD_NAME:.metadata.name | grep -i jenkins)
 export POD_NS=$(kubectl get pods $POD_NAME -o jsonpath="{.metadata.namespace}")
 export JENKINS_HOME=$(kubectl exec -i -t $POD_NAME -- printenv | grep "JENKINS_HOME" | cut -d= -f2 | tr -d '\r')
 export datetime=$(date +%Y%m%d_%H:%M:%S)
@@ -34,9 +34,12 @@ cd ..
 #gzip -9 -r ${backup_dir}
 
 
-# example for saving the backup in your private github repo
+
+#<< 'example' 
+#Example for saving the backup in your private github repo
 git_user=$(grep name ~/.gitconfig | cut -d= -f2 | sed 's/ //g')
 git_pass=$(grep password ~/.gitconfig | cut -d= -f2 | sed 's/ //g')
 git add ${backup_dir}
 git commit -am "Daily Jenkins Backup Sync"
 git push "https://${git_user}:${git_pass}@github.com/${git_user}/jenkins-backup.git"
+#example

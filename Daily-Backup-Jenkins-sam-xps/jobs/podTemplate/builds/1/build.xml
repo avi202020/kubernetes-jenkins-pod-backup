@@ -1,0 +1,75 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.39">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.16">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+  </actions>
+  <queueId>9</queueId>
+  <timestamp>1586781444793</timestamp>
+  <startTime>1586781444795</startTime>
+  <result>SUCCESS</result>
+  <duration>27674</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>podTemplate(cloud: &apos;kubernetes-Cluster1&apos;, containers: [containerTemplate(args: &apos;cat&apos;, command: &apos;/bin/sh -c&apos;, image: &apos;ubuntu:bionic&apos;, name: &apos;ubuntu-image&apos;, ttyEnabled: true), containerTemplate(args: &apos;cat&apos;, command: &apos;/bin/sh -c&apos;, image: &apos;centos:centos7&apos;, name: &apos;centos-image&apos;, ttyEnabled: true)], label: &apos;general-pod-label-cluster1&apos;, name: &apos;general-pod-label-cluster1&apos;) {
+      node(&apos;general-pod-label-cluster1&apos;) {
+		stage(&apos;Check Ubuntu Release&apos;) {
+			container(&apos;ubuntu-image&apos;) {
+			  sh &quot;cat /etc/*-release&quot;
+				}
+		  }
+		stage(&apos;Check Centos Release&apos;) {
+			container(&apos;centos-image&apos;) {
+			  sh &quot;cat /etc/*-release&quot;
+				}
+		  }
+	}
+}</script>
+    <loadedScripts class="map"/>
+    <persistedClean>true</persistedClean>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>49476434</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>73550903</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>2830933262</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>246145197</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>341881679</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>32</iota>
+    <head>30:32</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+    <storageDir>workflow-fallback</storageDir>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

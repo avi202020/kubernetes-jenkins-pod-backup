@@ -1,0 +1,49 @@
+Started by user [8mha:////4I97ZmECuJ+RavpYdZNZxMNM/8VH5kFdT7/HHYqH/GqUAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running in Durability level: MAX_SURVIVABILITY
+Loading library General-Shared-Library@master
+Attempting to resolve master from remote references...
+ > git --version # timeout=10
+ > git ls-remote -h -- https://github.com/samer-habash/Jenkins-shared-Library.git # timeout=10
+Found match: refs/heads/master revision b908d5bb656cd3e0d8d95162b04def55dfb34d10
+No credentials specified
+Cloning the remote Git repository
+Cloning with configured refspecs honoured and without tags
+Cloning repository https://github.com/samer-habash/Jenkins-shared-Library.git
+ > git init /var/jenkins_home/workspace/shared-library-pod-template@libs/General-Shared-Library # timeout=10
+Fetching upstream changes from https://github.com/samer-habash/Jenkins-shared-Library.git
+ > git --version # timeout=10
+ > git fetch --no-tags --progress -- https://github.com/samer-habash/Jenkins-shared-Library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/samer-habash/Jenkins-shared-Library.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/samer-habash/Jenkins-shared-Library.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://github.com/samer-habash/Jenkins-shared-Library.git
+ > git fetch --no-tags --progress -- https://github.com/samer-habash/Jenkins-shared-Library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision b908d5bb656cd3e0d8d95162b04def55dfb34d10 (master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b908d5bb656cd3e0d8d95162b04def55dfb34d10 # timeout=10
+Commit message: "Added vars at Pod Ubuntu"
+ > git rev-list --no-walk b908d5bb656cd3e0d8d95162b04def55dfb34d10 # timeout=10
+ERROR: Could not find any definition of libraries [General-Library@master]
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+WorkflowScript: Loading libraries failed
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:310)
+	at org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(CompilationUnit.java:1085)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:603)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:581)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:558)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
+	at groovy.lang.GroovyShell.parseClass(GroovyShell.java:688)
+	at groovy.lang.GroovyShell.parse(GroovyShell.java:700)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:142)
+	at org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:127)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:561)
+	at org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:522)
+	at org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:337)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:428)
+Finished: FAILURE
